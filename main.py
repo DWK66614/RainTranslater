@@ -112,7 +112,7 @@ def main():
             background_color='#1E1E20',
         )
         
-        # 窗口关闭时保存位置
+        # 窗口关闭时保存位置并通知后端关闭 llama-server
         def on_closing():
             try:
                 cfg["width"] = window.width
@@ -121,6 +121,8 @@ def main():
                 cfg["y"] = window.y
                 with open(config_path, 'w') as f:
                     json.dump(cfg, f)
+                # 通知后端关闭 llama-server
+                urllib.request.urlopen('http://127.0.0.1:18765/api/shutdown', timeout=2)
             except Exception:
                 pass
         

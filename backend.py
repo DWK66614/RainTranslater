@@ -490,24 +490,16 @@ def api_download_status():
 
 @app.route("/api/languages")
 def api_languages():
-    return jsonify({
-        "languages": [
-            {"code": "中文", "name": "中文"},
-            {"code": "英语", "name": "English"},
-            {"code": "日语", "name": "日本語"},
-            {"code": "韩语", "name": "한국어"},
-            {"code": "法语", "name": "Français"},
-            {"code": "德语", "name": "Deutsch"},
-            {"code": "西班牙语", "name": "Español"},
-            {"code": "俄语", "name": "Русский"},
-            {"code": "葡萄牙语", "name": "Português"},
-            {"code": "意大利语", "name": "Italiano"},
-            {"code": "阿拉伯语", "name": "العربية"},
-            {"code": "泰语", "name": "ไทย"},
-            {"code": "越南语", "name": "Tiếng Việt"},
-            {"code": "印尼语", "name": "Bahasa Indonesia"},
-        ]
-    })
+    return jsonify({"languages": LANGUAGES})
+
+@app.route("/api/shutdown")
+def api_shutdown():
+    """关闭 llama-server（窗口关闭时调用）"""
+    import threading
+    def _do():
+        cleanup_llama_server()
+    threading.Thread(target=_do, daemon=True).start()
+    return jsonify({"ok": True})
 
 # ==================== 后台预加载 ====================
 
