@@ -28,8 +28,13 @@ BASE_DIR = Path(__file__).parent
 if getattr(sys, 'frozen', False):
     BASE_DIR = Path(sys._MEIPASS)
 BIN_DIR = BASE_DIR / "bin"
-MODELS_DIR = BASE_DIR / "models"
 UI_DIR = BASE_DIR / "ui"
+
+# Models must be in a persistent location, not the temp extraction dir
+if getattr(sys, 'frozen', False):
+    MODELS_DIR = Path(os.environ.get('LOCALAPPDATA', os.path.expanduser('~'))) / 'RainTranslator' / 'models'
+else:
+    MODELS_DIR = BASE_DIR / "models"
 
 # 模型配置
 MODEL_REPO = "tencent/Hy-MT2-1.8B-GGUF"
