@@ -523,6 +523,23 @@ def preload_async():
 
 # ==================== 启动 ====================
 
+def cleanup_llama_server():
+    """退出时关闭 llama-server，避免 PyInstaller 临时目录清理失败"""
+    global llama_process, model_loaded
+    if llama_process:
+        try:
+            llama_process.terminate()
+            llama_process.wait(timeout=3)
+        except:
+            try:
+                llama_process.kill()
+            except:
+                pass
+    model_loaded = False
+
+import atexit
+atexit.register(cleanup_llama_server)
+
 if __name__ == "__main__":
     threading.Thread(target=preload_async, daemon=True).start()
     port = int(os.environ.get("PORT", 18765))
