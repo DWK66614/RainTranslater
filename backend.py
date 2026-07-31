@@ -194,7 +194,7 @@ def download_model():
     def _run():
         global download_state
         try:
-            MODELS_DIR.mkdir(exist_ok=True)
+            MODELS_DIR.mkdir(parents=True, exist_ok=True)
             out_path = MODELS_DIR / MODEL_FILENAME_DL
             
             # 先尝试 HF 镜像
