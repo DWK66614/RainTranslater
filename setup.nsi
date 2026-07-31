@@ -80,12 +80,9 @@ Section "Uninstall"
     nsExec::ExecToStack 'taskkill /f /im llama-server.exe'
     Sleep 1000
     
-    ; Remove model files (install dir + AppData)
+    ; Remove model files (install directory)
     Delete "$INSTDIR\models\*.gguf"
     RMDir "$INSTDIR\models"
-    Delete "$LOCALAPPDATA\RainTranslator\models\*.gguf"
-    RMDir "$LOCALAPPDATA\RainTranslator\models"
-    RMDir "$LOCALAPPDATA\RainTranslator"
     
     ; Remove all installed files
     RMDir /r /REBOOTOK "$INSTDIR"

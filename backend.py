@@ -31,8 +31,9 @@ BIN_DIR = BASE_DIR / "bin"
 UI_DIR = BASE_DIR / "ui"
 
 # Models must be in a persistent location, not the temp extraction dir
+# Use the executable's directory (install dir) so user can choose drive via installer
 if getattr(sys, 'frozen', False):
-    MODELS_DIR = Path(os.environ.get('LOCALAPPDATA', os.path.expanduser('~'))) / 'RainTranslator' / 'models'
+    MODELS_DIR = Path(sys.executable).parent / "models"
 else:
     MODELS_DIR = BASE_DIR / "models"
 
