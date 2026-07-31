@@ -1,11 +1,11 @@
 @echo off
 chcp 65001 >nul
 cd /d "%~dp0"
-title RainTranslater
+title RainTranslator
 
 echo.
 echo ╔══════════════════════════════════════════╗
-echo ║      RainTranslater 一键启动              ║
+echo ║      RainTranslator 一键启动              ║
 echo ║      本地模型 + 在线兜底                  ║
 echo ╚══════════════════════════════════════════╝
 echo.
@@ -27,7 +27,7 @@ if %ERRORLEVEL% neq 0 (
 )
 
 :: 启动
-echo [2/2] 启动 RainTranslater...
+echo [2/2] 启动 RainTranslator...
 echo.
 "%PYTHON%" main.py
 pause

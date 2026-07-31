@@ -1,5 +1,5 @@
 """
-RainTranslater - macOS 毛玻璃风格翻译工具
+RainTranslator - macOS 毛玻璃风格翻译工具
 本地 Hy-MT2 模型 + MyMemory 在线兜底
 
 启动方式:
@@ -47,7 +47,7 @@ def wait_for_backend(timeout=15):
 
 def main():
     print("=" * 50)
-    print("  RainTranslater v1.0")
+    print("  RainTranslator v1.0")
     print("  本地模型: Tencent Hy-MT2-1.8B")
     print("  在线兜底: MyMemory")
     print("=" * 50)
@@ -99,7 +99,7 @@ def main():
         print(f"[Window] 创建窗口 ({cfg['width']}x{cfg['height']})...")
         
         window = webview.create_window(
-            title="RainTranslater",
+            title="RainTranslator",
             url=f"http://127.0.0.1:{PORT}/?port={PORT}",
             width=cfg["width"],
             height=cfg["height"],
@@ -126,7 +126,7 @@ def main():
         
         window.events.closing += on_closing
         
-        print("RainTranslater 已启动！")
+        print("RainTranslator 已启动！")
         webview.start(debug=False)
     else:
         print("[Server] 后端运行中 (无窗口模式)，按 Ctrl+C 退出")

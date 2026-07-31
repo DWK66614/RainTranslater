@@ -1,4 +1,4 @@
-# RainTranslater
+# RainTranslator
 
 [English](README_EN.md)
 
@@ -15,7 +15,7 @@
 
 ## 快速开始
 
-1. 从 [Releases](https://github.com/DWK66614/RainTranslater/releases) 下载 `RainTranslater_Setup.exe`
+1. 从 [Releases](https://github.com/DWK66614/RainTranslator/releases) 下载 `RainTranslator_Setup.exe`
 2. 安装并启动
 3. 点击「本地」模式下载翻译模型（约 1GB）
 4. 开始翻译
@@ -32,7 +32,7 @@ python main.py
 构建安装包：
 
 ```
-python -m PyInstaller --noconfirm RainTranslater.spec
+python -m PyInstaller --noconfirm RainTranslator.spec
 makensis.exe /INPUTCHARSET UTF8 setup.nsi
 ```
 

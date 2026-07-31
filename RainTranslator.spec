@@ -1,5 +1,5 @@
 # -*- mode: python ; coding: utf-8 -*-
-"""PyInstaller spec for RainTranslater (slim)"""
+"""PyInstaller spec for RainTranslator (slim)"""
 
 LLAMA_KEEP = [
     'llama-server.exe', 'llama-server-impl.dll',
@@ -10,7 +10,7 @@ LLAMA_KEEP = [
 
 a = Analysis(
     ['main.py'],
-    pathex=['D:/VibeCodingProject/RainTranslater'],
+    pathex=['D:/VibeCodingProject/RainTranslator'],
     binaries=[],
     datas=[
         ('ui/*', 'ui'),
@@ -48,7 +48,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='RainTranslater',
+    name='RainTranslator',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -71,5 +71,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='RainTranslater',
+    name='RainTranslator',
 )

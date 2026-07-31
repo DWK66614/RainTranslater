@@ -1,4 +1,4 @@
-# RainTranslater
+# RainTranslator
 
 [中文](README.md)
 
@@ -15,7 +15,7 @@ Local AI translation tool powered by Tencent Hy-MT2 with MyMemory free API fallb
 
 ## Quick Start
 
-1. Download `RainTranslater_Setup.exe` from [Releases](https://github.com/DWK66614/RainTranslater/releases)
+1. Download `RainTranslator_Setup.exe` from [Releases](https://github.com/DWK66614/RainTranslator/releases)
 2. Install and launch
 3. Click "Local" mode to download the translation model (~1 GB)
 4. Start translating
@@ -32,7 +32,7 @@ python main.py
 To build the installer:
 
 ```
-python -m PyInstaller --noconfirm RainTranslater.spec
+python -m PyInstaller --noconfirm RainTranslator.spec
 makensis.exe /INPUTCHARSET UTF8 setup.nsi
 ```
 

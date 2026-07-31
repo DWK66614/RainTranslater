@@ -1,5 +1,5 @@
 """
-RainTranslater 后端服务
+RainTranslator 后端服务
 - llama-server (C++ llama.cpp) 本地推理
 - MyMemory 在线兜底
 - 自动下载模型
@@ -518,7 +518,7 @@ def preload_async():
 if __name__ == "__main__":
     threading.Thread(target=preload_async, daemon=True).start()
     port = int(os.environ.get("PORT", 18765))
-    log.info(f"RainTranslater 后端启动于 http://127.0.0.1:{port}")
+    log.info(f"RainTranslator 后端启动于 http://127.0.0.1:{port}")
     try:
         app.run(host="127.0.0.1", port=port, debug=False)
     finally:
