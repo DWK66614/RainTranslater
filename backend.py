@@ -111,11 +111,13 @@ def start_llama_server():
     
     log.info(f"启动 llama-server: {' '.join(cmd)}")
     try:
+        # CREATE_NO_WINDOW = 0x08000000, hide console window
         llama_process = subprocess.Popen(
             cmd,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
             cwd=str(BASE_DIR),
+            creationflags=0x08000000 if sys.platform == 'win32' else 0,
         )
         
         # 等待服务器就绪
