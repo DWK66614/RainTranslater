@@ -45,7 +45,7 @@ makensis.exe /INPUTCHARSET UTF8 setup.nsi
 - NSIS 安装器 (LZMA 压缩)
 - MyMemory 免费翻译 API
 
-## 鸣谢
+## 使用到的模型、软件、API等
 
 - **Hy-MT2 模型**：腾讯混元翻译模型 2.0
 - **llama.cpp**：本地 LLM 推理引擎
